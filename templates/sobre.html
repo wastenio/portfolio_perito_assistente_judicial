@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Sobre - Perito Grafotécnico e ATJ{% endblock %}
+
+{% block content %}
+<div class="row align-items-center">
+  <div class="col-md-6">
+    <h2>Quem sou eu?</h2>
+    <p>
+      Olá, meu nome é <strong>Wastenio da Silva Rocha</strong>. Sou formado em 
+      <strong>Análise e Desenvolvimento de Sistemas</strong> e estou em fase de conclusão do curso técnico de 
+      <strong>Perícia Grafotécnica</strong>, além de possuir formação como 
+      <strong>Assistente Técnico Judiciário (A.T.J.)</strong>.
+    </p>
+    <p>
+      Com uma base sólida em tecnologia e perícia técnica, atuo na elaboração de análises grafotécnicas com foco na
+      autenticidade de assinaturas e documentos questionados em processos judiciais e extrajudiciais.
+    </p>
+
+    <h4>Missão Profissional</h4>
+    <p>
+      Contribuir com a Justiça e com a sociedade por meio de <strong>laudos grafotécnicos técnicos, objetivos e imparciais</strong>, 
+      aplicando metodologias reconhecidas e respeitando os princípios éticos e científicos da área da documentoscopia.
+    </p>
+
+    <h4>Por que confiar no meu trabalho?</h4>
+    <ul>
+      <li><strong>Formação multidisciplinar</strong>: integração entre tecnologia, análise documental e normas jurídicas.</li>
+      <li><strong>Atualização contínua</strong>: técnicas modernas de confronto gráfico, análise de falsificações e padrão caligráfico.</li>
+      <li><strong>Compromisso com a ética</strong>: imparcialidade, sigilo e responsabilidade em cada perícia realizada.</li>
+    </ul>
+  </div>
+
+  <div class="col-md-6 text-center">
+    <img src="{{ url_for('static', filename='img/pericia_grafotecnica.jpg') }}" alt="Perícia Grafotécnica" class="img-fluid rounded shadow" style="max-height:350px;" />
+  </div>
+</div>
+{% endblock %}

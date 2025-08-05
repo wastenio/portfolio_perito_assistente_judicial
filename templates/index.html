@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %}Início - Portfólio Perito Grafotécnico{% endblock %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="hero-section d-flex align-items-center text-white text-center py-5" style="min-height: 80vh;">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Foto -->
+            <div class="col-md-4 mb-4 mb-md-0">
+                <img src="{{ url_for('static', filename='img/wastenio.jpg') }}" 
+                     alt="Foto de Wastenio da Silva Rocha" 
+                     class="img-fluid rounded-circle shadow" 
+                     style="max-width: 250px;">
+            </div>
+            <!-- Texto -->
+            <div class="col-md-8">
+                <h1 class="display-5 fw-bold">Tecnologia, Perícia e Compromisso com a Excelência</h1>
+                <p class="lead mt-3">
+                    Sou formado em <strong>Análise e Desenvolvimento de Sistemas</strong> e Pós-Graduando em <strong>Engenharia de Software</strong>, com forte atuação no desenvolvimento de soluções tecnológicas.<br>
+                    Especialista em <strong>Perícia Grafotécnica</strong> e <strong>Assistência Técnica Judicial</strong>, integro conhecimento técnico e rigor metodológico na produção de laudos precisos e confiáveis.<br>
+                    Este portfólio reúne minha trajetória profissional, projetos e áreas de especialização, refletindo minha dedicação à justiça, tecnologia e inovação.
+                </p>
+                <a href="{{ url_for('sobre') }}" class="btn btn-lg btn-outline-light mt-4">Saiba mais sobre mim</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DESTAQUES -->
+<section class="features-section py-5 text-center">
+    <div class="container">
+        <h2 class="section-title">Serviços em Destaque</h2>
+        <p class="section-subtitle">Confira as principais áreas de atuação e como posso ajudar no seu caso</p>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card card-custom h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Laudo Grafotécnico</h5>
+                        <p class="card-text">Análise precisa de assinaturas e documentos para identificar autenticidade ou possíveis falsificações.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-custom h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Quesitos Técnicos</h5>
+                        <p class="card-text">Formulação e resposta de quesitos técnicos com base em confronto gráfico e padrões reconhecidos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-custom h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Estudos de Casos</h5>
+                        <p class="card-text">Casos reais com parecer técnico que contribuíram para decisões judiciais seguras e fundamentadas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="{{ url_for('servicos') }}" class="btn btn-primary mt-4">Conheça todos os serviços</a>
+    </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section bg-dark text-white py-5">
+    <div class="container text-center">
+        <h2 class="mb-3">Precisa de um parecer técnico?</h2>
+        <p class="mb-4">Entre em contato para solicitar um orçamento ou tirar dúvidas sobre o seu caso.</p>
+        <a href="{{ url_for('contato') }}" class="btn btn-outline-light btn-lg">Fale comigo</a>
+    </div>
+</section>
+
+{% endblock %}

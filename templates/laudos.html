@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Laudos Técnicos{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <h2 class="text-center mb-4">Laudos Técnicos</h2>
+  
+  <div class="row">
+    {% for laudo in laudos %}
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">{{ laudo.titulo }}</h5>
+          <p class="card-text">{{ laudo.descricao }}</p>
+        </div>
+        <div class="card-footer bg-transparent border-top-0">
+          {% if laudo.arquivo %}
+          <a href="{{ url_for('static', filename='laudos/' ~ laudo.arquivo) }}" class="btn btn-outline-primary" target="_blank">Visualizar</a>
+          {% else %}
+          <span class="text-muted">Arquivo não disponível</span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

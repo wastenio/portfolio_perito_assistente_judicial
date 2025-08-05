@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Contato - Portfólio Perito Grafotécnico{% endblock %}
+
+{% block content %}
+<section class="features-section py-5">
+  <div class="container">
+    <h2 class="section-title text-center">Entre em Contato</h2>
+    <p class="section-subtitle text-center">Preencha o formulário abaixo e retornarei o mais breve possível.</p>
+
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-8">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }}" role="alert">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <form method="POST" action="{{ url_for('contato') }}">
+          <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" id="nome" name="nome" class="form-control" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="mensagem" class="form-label">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="5" class="form-control" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

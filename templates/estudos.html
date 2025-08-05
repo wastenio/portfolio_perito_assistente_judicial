@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Estudos de Caso - Perito Grafotécnico{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Estudos de Caso</h2>
+
+<p>Veja abaixo exemplos de análises técnicas realizadas, que demonstram minha metodologia e resultados obtidos.</p>
+
+<div class="accordion" id="casosAccordion">
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="caso1Header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#caso1" aria-expanded="true" aria-controls="caso1">
+        Caso 1: Análise de assinatura com suspeita de falsificação
+      </button>
+    </h2>
+    <div id="caso1" class="accordion-collapse collapse show" aria-labelledby="caso1Header" data-bs-parent="#casosAccordion">
+      <div class="accordion-body">
+        <p>Realizei a análise de uma assinatura questionada em documento bancário, comparando com assinaturas originais do cliente, identificando inconsistências no traçado e pressão.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="caso2Header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#caso2" aria-expanded="false" aria-controls="caso2">
+        Caso 2: Laudo técnico em documento judicial
+      </button>
+    </h2>
+    <div id="caso2" class="accordion-collapse collapse" aria-labelledby="caso2Header" data-bs-parent="#casosAccordion">
+      <div class="accordion-body">
+        <p>Elaborei laudo grafotécnico para processo judicial, com análise detalhada de falsificações e apresentação clara dos quesitos, auxiliando na decisão judicial.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
