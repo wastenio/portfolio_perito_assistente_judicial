@@ -1,15 +1,18 @@
+from dotenv import load_dotenv
+load_dotenv()
 from flask import Flask, render_template, request, flash, redirect, url_for
 from flask_mail import Mail, Message
+import os
 
 app = Flask(__name__)
-app.secret_key = 'sua_chave_secreta_aqui'
+app.secret_key = os.environ.get('SECRET_KEY', 'chave-padrao-secreta')
 
 # Configurações do Flask-Mail (exemplo Gmail)
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'wastenio.silva@gmail.com'        # seu e-mail
-app.config['MAIL_PASSWORD'] = 'fikagrandeporra'        # sua senha ou app password
+app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')       # seu e-mail
+app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')        # sua senha ou app password
 app.config['MAIL_DEFAULT_SENDER'] = ('Portfólio Perito', app.config['MAIL_USERNAME'])
 
 mail = Mail(app)
